@@ -25,6 +25,10 @@ app.get("/api/products", (req, res) => {
     }
   });
 
+  app.get("/", (req, res) => {
+    res.send("Welcome")
+  })
+
 // Start the server
 const start = async () => {
   await connectDB(process.env.MONGO_CONNECTION_STRING);
