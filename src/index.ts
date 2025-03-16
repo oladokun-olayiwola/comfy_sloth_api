@@ -3,16 +3,26 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./connectDB/connect";
 import { products } from "./data/products";
+import authRoutes from "./routes/auth"
+import productRoutes from "./routes/products"
 
 dotenv.config();
 
 const app = express();
+app.use(express.json())
 const PORT = process.env.PORT || 4000;
 
 // Enable CORS
 app.use(cors());
 
 // Define API routes
+
+//Main Api
+app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes)
+
+
+// Testing Api for page Data
 app.get("/api/products", (req: Request, res: Response) => {
   res.json(products);
 });
