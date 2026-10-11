@@ -1,9 +1,15 @@
 {
   "version": 2,
+  "outputDirectory": null,
+  "functions": {
+    "src/index.ts": {
+      "includeFiles": "src/**"
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/src/index.ts"
+      "source": "/(.*)",
+      "destination": "src/index.ts"
     }
   ]
 }
