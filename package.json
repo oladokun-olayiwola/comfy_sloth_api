@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js",
+    "build": "echo 'No build step required for Vercel'",
+    "type-check": "tsc --noEmit",
     "populate": "tsx src/populate.ts"
   },
   "author": "",
